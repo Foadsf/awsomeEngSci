@@ -103,6 +103,13 @@ I have searched the internet and I have found some of the open source 3D and 2D 
 - D3
 
 
+PDE solver (FEM, CFD...) (list1)
+Preprocessor: Gmsh, Netgen, tetgen, ElmerGrid (Quickmesh), GetDDM, METIS, pdnMesh, EasyMesh, libmesh, tetlib, nglib, OpenFOAM blockMesh, gCAD3D, Larosterna, enGrid
+ solver: ELMER, Impact, OpenFOAM, SALOME Meca, ONELAB, GetDP KRATOS, MOOSE, CalculiX, Code_Aster, Code_Saturne, FEniCS-Oasis, FreeFem++, SU2, Vortexje, Caedium, NASA NASTRAN, cast3m, R-desolve, z88, OOFEM, CMISS (list1, list2, list3), NGSolve, tochnog, NiftySim, MFEM/GLVis,  Finite Element ToolKit (FETK), deal.II, GetFEM++, DUNE, Gerris Flow Solver, SfePy , HiFlow3,Agros2D, Hermes Project, oomph-lib, FeatFlow, futureye , OpenFVM, coolfluid3, MBDyn, OpenSees, Dedalus, MuPIF, AixVipMap, CHEOPS, CouPE , Advanced Simulation Library (ASL)  , ALBERTA , The FEBio software suite ...?
+postprocessors:ParaView, OpenDX, Wings 3D, VisIt, libmesh, tetgen
+mesh edit: MeshLab, GLC_Player, CloudCompare, blender, meshfix, ReMESH, Openmesh, open3mod
+
+
 
 Sadly the world of CAM/CNC is dominated by proprietary software which costs hobbyists and students a lot. Besides for scientists and researchers they do not provide much freedom to tinker around. I have previously listed all the available CAD options [here](https://www.reddit.com/r/cad/comments/8dmtc8/please_share_your_experience_with_the_available/) or if you are interested in indirect code based design [here](https://github.com/openscad/openscad/issues/2299). I'm going to just list everything I have found and then maybe you guys can share others:
 
@@ -440,3 +447,22 @@ Serial Wire Debug (SWD)
     16. SymEngine
     17. [GiNaC](https://www.ginac.de/)
     18. [Piranha](https://github.com/bluescarni/piranha)
+    
+    
+CAS: Cadabra, Singular, Giac/Xcas, CoCoA, GAP, Erable/ALGB, Aldor
+Numerical: (R, Python, Julia, gnuplot, CERN/ROOT, Fortran, GNU Octave, Scilab/Scicoslab, Modelica, ASCEND, bc, PDL Perl Data Language, IDL interactive data language )
+Plotting: gnuplot, Matplotlib, TikZ/PGFplot, Qtiplot, SciDAVis, LabPlot, List
+simulation: Modelica language
+
+
+CAS/symbolic : WxMaxima (Euler Math Toolbox (EMT), Mathics, Cantor, MathAction)
+Numerical: (GNU Ocatve, scilab, scicoslab, FreeMat, EngLab ,ASCEND, PyDSTool, Reinteract , MathPiper )
+Ket, Mirai Math, PARI/GP, Calc, Euler Math Toolbox, GSL Shell, Genius, spyder, python(x,y),   (list)
+Ploting:
+gnuplot
+Matplotlib
+Ptplot
+Data analysis
+Orange, Fityk, Simfit, QtiPlot, PyModelFit,  other 
+
+
