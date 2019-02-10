@@ -219,214 +219,205 @@ There are other lists also at [wiki.shapeoko](https://wiki.shapeoko.com/index.ph
 
 
 
-Following my former lists of [CAD](https://www.reddit.com/r/cad/comments/8dmtc8/please_share_your_experience_with_the_available/) and [CAM/CNC](https://www.reddit.com/r/CNC/comments/aizatc/free_and_open_source_camcnc_software/) software for mechanical engineering, I decided to create also a similar list for electrical engineering software. I hope this will stimulate FOSS adoption and help the community to better know of their alternatives. 
+Following my former lists of awesome [CAD](https://www.reddit.com/r/cad/comments/8dmtc8/please_share_your_experience_with_the_available/) and [CAM/CNC](https://www.reddit.com/r/CNC/comments/aizatc/free_and_open_source_camcnc_software/) FOSS for mechanical engineering, I decided to create also a similar list for electrical engineering too. However it turned out to be way more complicated than what I expected, taking two weeks of my free time to research.
 
+I'm not gonna lecture you about the importance of FOSS, and I think most professionals are aware of the advantages. From software licensing costs, privacy, cross platform experience, customizability and most importantly vendor lock down. Just imaging Autodesk decides to triple its fees all of a sudden. Your designs are basically ransom! Or if you are a scientist and want to implement your own auto routing method or improved compiling algorithm, or you are a student you want to do something on your mac or Linux computer without loosing your sanity over virtualization...
 
+The way I categorize these software will be based on the conventional workflow I use for my own work (Robotics). I will start with conceptual design including a circuit schematics and a breadboard implementation. Following by programing the Microcontroller and then merging the circuit and MCU in a prototype or simulation. Next step the PCB should be designed and send for manufacturing. I hope this list will stimulate FOSS adoption and help the community to better know of their alternatives.
 
+# EDA suits:
 
-netlist 
-RTL Register Transfer Logic
-HDL Hardware description language
-EDIF Electronic Design Interchange Format
-VHDL VHSIC Hardware Description Language)
-Verilog 
-design rule check (DRC)
-Design for manufacturability DFM
-soc
-ASIC
-Very-large-scale integration (VLSI)
-GDSII https://en.wikipedia.org/wiki/GDSII
-Layout Versus Schematic (LVS)
-Gerber
+These are the family of the products which try to integrate most of the PCB Design process in one place. They usually include the schematic capture and CAD parts, and sometimes even the simulation and auto routing.
 
+* **KiCAD:** Is probably the most famous and stable of all FOSS EDA suits. It does not require introduction; if you haven't heard of it you have probably living under a stone :) what makes it unique is the fact it is used and supported by the folks at CERN. In the latest version it has some simulation (using Ngspice?) and some auto routing plugins.
+* **Fritzing:** In my humble opinion is the most hobbyist friendly of all EDA suits. I have read a lot of criticism on the forums about it though. What makes it unique is the virtual breadboard where you can place parts and connections similar to the way you could do it on a real one. It is great for beginners like me as well as documentation and publication.
+* **gEDA** Is a combination of several other packages including gschem, pcb and Gerbv. It is the classic gold standard of EDA suits world. It's community is comparable to KiCAD and Fritzing, if not bigger.
+* [**LibrePCB**](https://github.com/LibrePCB/LibrePCB)**:** Is an ambitious attempt to develop an EDA suit from scratch which outperforms KiCAD in terms of usability and extendability. Extensive libraries and version control are some of the key features. Reading from the forums this project has a bright future.
+* [**Horizon**](https://github.com/carrotIndustries/horizon)**:** similar to the LibrePCB, is another attempt to make a better FOSS EDA and very appreciated by the community.
 
+TinyCAD, FreePCB, BSch3V MINIMAL PCB EDITOR, MeowCAD, [PCB Elegance](http://www.pcbelegance.org), [Caneda](https://github.com/Caneda/Caneda), [diy-layout-creator](https://code.google.com/archive/p/diy-layout-creator/), [BlackBoard Circuit Designer](https://github.com/mpue/blackboard), [eSim](https://esim.fossee.in/home) formerly Oscad  FreeEDA, [myNetPCB](https://sourceforge.net/projects/mynetpcb/), [FidoCadJ](https://sourceforge.net/projects/fidocadj/)) are also some of the available options for those who enjoy investigating. Also if you care about programatic (aka code based indirect CAD), there are attempts like [aeCAD](https://github.com/aktos-io/aecad) and [SKiDL](https://github.com/xesscorp/skidl) to look into. Immediate advantages of indirect CAD are version control and object oriented programing, but it requires its own essay. If you have a design with lots of components and layers, manual placement and routing (PnR) can be cumbersome. There are some automatic PnR tools available which are either an standalone GUI/CLI and/or as plugins to above EDA suits:
 
-
-electronic design automation (EDA), printed circuit board (PCB),  board design
-
-* Fritzing
-* KiCAD
-* gEDA, gschem 
-* FreePCB
-* [LibrePCB](https://github.com/LibrePCB/LibrePCB)
-* [Horizon](https://github.com/carrotIndustries/horizon)
-* TinyCAD
-* BSch3V MINIMAL PCB EDITOR
-* MeowCAD
-* PCB Elegance http://www.pcbelegance.org
-* Alliance CAD 
-* Caneda https://github.com/Caneda/Caneda
-
-automatic place and route (PnR):
-* [FreeRouting](https://freerouting.org), https://github.com/Engidea/FreeRoutingNew , https://freerouting.mihosoft.eu
-*  https://github.com/vygr/C-PCB
+* [**FreeRouting**](https://freerouting.org)**:**, on [GitHub](https://github.com/Engidea/FreeRoutingNew) or [this website](https://freerouting.mihosoft.eu)
+* [VeroRoute](https://sourceforge.net/projects/veroroute/)
+* [C-PCB](https://github.com/vygr/C-PCB)
 * MUCS-PCB
 * qautorouter
-* Graywolf formerly TimberWolf https://github.com/rubund/graywolf
-* Fairly Good Router FGR http://vlsicad.eecs.umich.edu/BK/FGR/
+* [Graywolf](https://github.com/rubund/graywolf) formerly TimberWolf
+* [Fairly Good Router FGR](http://vlsicad.eecs.umich.edu/BK/FGR/) and more has been listed in [this eevblog forum post](https://www.eevblog.com/forum/kicad/open-source-high-quality-autorouting-is-it-possible/)
 
-more here: https://www.eevblog.com/forum/kicad/open-source-high-quality-autorouting-is-it-possible/
+# Circuit diagram:
 
+These are the software for schematics capture. Some might use these as a conceptual design platform, But I personally prefer to use pen and paper first. Then using these software is necessary for documentation of the final design. Some of them can also export different flavors of netlist (SPICE, Spectre, CDL...) to be imported to EDA suits, auto-routing or simulation software:
 
-viewers:
-* Gerbv Gerber file (RS-274X only) viewer.
-
-editors:
-* ChipVault
-* 
-
-Circuit diagram
-
-schematics capture
 * XCircuit
-* FidoCadJ
-* Circuit Diagram https://www.circuit-diagram.org
-* QElectroTech https://qelectrotech.org/
-* AACircuit 
-* Dia diagram editor, InkScape, LibreOffice LibreSymbols , TikZ CircuiTikz, METAPOST MakeCirc, PSTricks pst-circ http://pstcirc.free.fr/index.html, Circuit_macros https://ece.uwaterloo.ca/~aplevich/Circuit_macros/ , Cirkuit http://wwwu.uni-klu.ac.at/magostin/cirkuit.html , lcapy http://lcapy.elec.canterbury.ac.nz 
+* [YCircuit](https://siddharthshekar.bitbucket.io/public/ycircuit/) which is an attempt to improve XCircuit
+* [Circuit Diagram](https://www.circuit-diagram.org)
+* [QElectroTech](https://qelectrotech.org/)
+* AACircuit
 
-simulation, SPICE, virtual prototyping, demonstrative, 
-* SPICE (Simulation Program with Integrated Circuit Emphasis)  https://ptolemy.berkeley.edu/projects/embedded/pubs/downloads/spice/ --> analogue
-* [Quite Universal Circuit Simulator \(QUCS\)](), Qucs-S , Qucsstudio, Qucsator
-* Circuit Simulator
-* KTechLab
-* Ngspice, Spice3f5, Cider1b1 and Xspice
-* Xyce
+There also more general purpose software like Dia diagram editor, InkScape, LibreOffice (LibreSymbols) for design and documentation of discute boards. If you prefer non-WYSWYG way of design then TikZ CircuiTikz, METAPOST MakeCirc, [PSTricks pst-circ](http://pstcirc.free.fr/index.html), [Circuit\_macros](https://ece.uwaterloo.ca/~aplevich/Circuit_macros/) , [Cirkuit](http://wwwu.uni-klu.ac.at/magostin/cirkuit.html) , [lcapy](http://lcapy.elec.canterbury.ac.nz), might be your cup of tee.
+
+# Simulation:
+
+Now some people might argue that thanks to the cheap development boards like Arduino and Raspberry pi, simulation is unnecessary, which I strongly disagree. For me personally simulation is important to reduce risks of damage on the hardware or even novice students, documentation, long distance collaboration...
+
+The most well-known software commercial software in this category is the infamous [Proteus VSM](https://alternativeto.net/software/proteus-vsm/?license=opensource) which not only is very expensive for hobbyists and students, but is also only on Windows! Unfortunately there is not much in the FOSS world coming close to Proteus VSM in terms of stability and features. Mosts of the FOSS are either for analogue or logic circuits simulation or for MCU emulation, not much available for integrated virtual prototyping. However, it does not mean FOSS community has done nothing. There are amazing attempts:
+
+## Integrated MCU-analogue:
+
+* **KTechLab:** is probably the most amazing and in some ways peculiar of all in this section. It is primarily an KDE tool for RCL, logic and PIC MCU (using gpsim) simulation. However it has a unique visual programing environment where one can develop the MCU workflow by flowcharts. Then it is translated into Microbe or MicroBASIC, another peculiar high level language of KTechLab. It also an IDE for C, assembly and MicroBASIC development and compiling (using SDCC?). It is unfortunate that KTechLab is still very unstable full of bugs. Another long requested feature is the AVR integration. There have been requests since 2006 to use SimulAVR, yet this feature to be seen :(
+* **SimulIDE:** is all KTechLab wished to be. It has both PIC and AVR integration. However it is also not yet stable, more to be considered as a prototype.
+* [**Emulare**](http://emulare.sourceforge.net/)**:** for ATMega line of MCUs
+* [simuino](https://code.google.com/archive/p/simuino/) an Arduino UNO/MEGA Pin Simulator
+* [gpsim](https://en.m.wikipedia.org/wiki/Gpsim) used in both KTechLab and SimulIDE
+* PICsim PICsimLab
+* [SimulAVR](http://www.nongnu.org/simulavr/) which also includes simulavr-disp a TCL-TK GUI. It used in SimulIDE and is the gold standard FOSS AVR simulation.
+* [simavr](https://github.com/buserror/simavr) is the newer AVR simulation which according to the forums is a very promising alternative to SimulAVR.
+* [PIC-Simulator](https://github.com/PalatinCoder/PIC-Simulator)
+* GNUSim8085
+* [MCUSim](https://trac.mcusim.org)
+* Ardulator
+* [Arduino Simulator](https://sourceforge.net/projects/arduinosim/)
+* [emulino](https://github.com/ghewgill/emulino)
+* [HAPSIM](http://www.helmix.at/hapsim/)
+
+## General purpose:
+
+There are softwares which are not specifically for EE simulation:
+
+* Modelica Language and its FOSS implementations such as OpenModelica and jModelica are a great option for simulation of multi physics systems. The OM software has libraries for analogue, digital and logic electronic components. You have the option to use the GUI to connect the components or code your system in Modelica Language using continuous and discrete algebraic differential equations. The language has also been adopted by Wolfram Mathematica's produces, Maple and many more. It is just a shame that it is not already an industry standard!
+* Scilab's Xcos or ScicosLab's SciCos are somehow attempts to replicate MATLAB's SIMULINK. They are indeed not as powerful but still great for students, teachers and even easy industrial simulation. Especially if you want to prototype a system and do not want to spend much time to code it, the visual programing environment can be a great help.
+* MyOpenLab is also a great platform for visual physical system simulation. It can be considered an alternative to NI's LabVIEW.
+
+## Analogue:
+
+These are the software which can only simulate the RCL and logical circuits. They import netlist files mostly:
+
+* [**SPICE**](https://ptolemy.berkeley.edu/projects/embedded/pubs/downloads/spice/) (Simulation Program with Integrated Circuit Emphasis) which has been around since the beginning of time, is just for analogue simulation.
+* Quite Universal Circuit Simulator (QUCS), and its SPICE compatible version Qucs-S have one of the largest user bases. Qucsstudio is also another derivative.
+* Ngspice which is a combination of three FOSS projects Spice3f5, Cider1b1 and Xspice, is "a mixed-level/mixed-signal circuit simulator". It is the simulation backend of most EDAs above KiCAD, Fritzing and gEDA.
+* Xyce is also an SPICE compatible simulator for "extremely large circuit problems by supporting large-scale parallel computing platforms"
+* Circuit Simulator\]([https://github.com/pfalstad/circuitjs1](https://github.com/pfalstad/circuitjs1)) Java and web based
+* [BrainBox](https://freegroup.github.io/brainbox/circuit/) web based
 * PySpice
-* SpiceOpus http://spiceopus.si
+* [SpiceOpus](http://spiceopus.si)
 * QSapecNG
 * oregano
-* BrainBox
-* SimulIDE
-* Ardulator 
-* CppSim
-* gpsim https://en.m.wikipedia.org/wiki/Gpsim
 * gSpiceUI
-* [Circuit Simulator \(CircuitJS1\)](https://github.com/pfalstad/circuitjs1)
-* eSim formerly Oscad  FreeEDA https://esim.fossee.in/home
-* PCB Elegance
+* [GNU Circuit Analysis Package (Gnucap)](https://en.wikipedia.org/wiki/GNU_Circuit_Analysis_Package)
+* [linNet](https://sourceforge.net/projects/linnet-svn/) symbolically
+* [LCSIM - Laboratory Circuit Simulator](https://sourceforge.net/projects/lcsim/files/latest/download))
+
+# IC design and simulation programing:
+
+Software for logic, FPGA, IC ...
+
 * [Electric](https://staticfreesoft.com)
-* [GNU Circuit Analysis Package \(Gnucap\)](https://en.wikipedia.org/wiki/GNU_Circuit_Analysis_Package)
+* Alliance CAD
 * [Icarus Verilog](http://iverilog.icarus.com)
 * Verilator
+* TkGate
+* KSimus
+* KLogic
 * GHDL
 * FidoCadJ
 * myNetPCB
 * JSchem
-* BSch3V 
+* BSch3V
 * IRSIM
 * FreeHDL
 * Chisel with Scala
 * MyHDL and Migen with Python
-* Bluespec and Lava with Haskell 
+* Bluespec and Lava with Haskell
 * PSHDL
-* Emulino
-* Ardiuno debugger
-* Emulare
-* Code blocks ardiuno IDE
-* SimAVR
-* ArduinoSim
-* Simduino
-* PICSimLab
-* CEDAR Logic Simulator https://sourceforge.net/projects/cedarlogic/
-* Logisim and the fork Logisim-Evolution (https://github.com/reds-heig/logisim-evolution)
-* gLogic 
-* Logic Gate Simulator https://sourceforge.net/projects/gatesim/
+* [CEDAR Logic Simulator](https://sourceforge.net/projects/cedarlogic/)
+* Logisim and the fork [Logisim-Evolution](https://github.com/reds-heig/logisim-evolution)
+* gLogic
+* [Logic Gate Simulator](https://sourceforge.net/projects/gatesim/)
 * Qfsm
 * Yosys, netlistsvg
-* Qflow http://opencircuitdesign.com/qflow/welcome.html
-* Netgen http://opencircuitdesign.com/netgen/
-* IceStorm http://www.clifford.at/icestorm/
-
-
-* simavr https://github.com/buserror/simavr
-* SimulAVR http://www.nongnu.org/simulavr/
-* PICsim
-* PICsimLab
-* PIC-Simulator https://github.com/PalatinCoder/PIC-Simulator
-* gpsim
-* GNUSim8085
-* MCUSim https://trac.mcusim.org
-
-ELF or HEX
-
-Microcontrollers (MCU): Atmel AVR, Texas Instruments MSP, Microchip PIC, ARM, Intel 8085/8051, Motorola  NXP ColdFire, 
-
-real-time operating systems
-https://www.osrtos.com
-
-
-compilers:
-SDCC Small Device C Compiler
-cpik
-avr-gcc
-MSPgcc
-GPUTILS, gpasm, gplink, and gplib
-MSPgcc
-MIPS https://www.linux-mips.org/wiki/Toolchains
-MPIDE http://chipkit.net/wpcproduct/mpide/
-OpenOCD - Open On-Chip Debugger
-
-
-
-
-IDE:
-Arduino 
-Pinguino 
-Piklab
-Wiring http://wiring.org.co/
-
-
-
-MicroPython
-CircuitPython
-Zerynth
-
-
-burner download:
-avrdude
-avrgal
-pic32prog
-ardupic32
-
-
-
-
-Xcos/scicos
-Modelica Language (Jmodelica and OpenModelica)
-MyOpenLab
-
-
-
+* [Qflow](http://opencircuitdesign.com/qflow/welcome.html)
+* [Netgen](http://opencircuitdesign.com/netgen/)
+* [IceStorm](http://www.clifford.at/icestorm/)
 * gwave
-* GTKWave 
+* GTKWave VCD
+
+# Microcontroller programing:
+
+## Operating Systems:
+
+List of real-time operating systems or firmware [here](https://www.osrtos.com)
+
+## Compilers:
+
+* [avr-gcc](https://www.nongnu.org/avr/)
+* [avra](https://sourceforge.net/projects/avra/)
+* SDCC Small Device C Compiler
+* GPUTILS, gpasm, gpdasm, gplink, and gplib
+* [gnupic](http://www.gnupic.org) spasm, gypsum
+* cpik
+* MSPgcc --> TI
+* [MIPS GCC](https://www.linux-mips.org/wiki/Toolchains)
+* [MPIDE](http://chipkit.net/wpcproduct/mpide/)
+* OpenOCD - Open On-Chip Debugger
+* PicCBuilder
+* pic32 microchip compiler
+* [Newlib](http://sourceware.org/newlib/)
+* [Picprog](http://hyvatti.iki.fi/~jaakko/pic/picprog.html)
+* [Hex2bin](https://sourceforge.net/projects/hex2bin/)
+
+## High level languages:
+
+* [Jal (not?) Just Another Language](http://jal.sourceforge.net)
+* [PicPas](https://github.com/t-edson/PicPas)
+* Microbe/MicroBASIC --> KTechLab
+* MicroPython
+* CircuitPython
+* Zerynth
+
+more at [fedoraproject](https://fedoraproject.org/wiki/Packages_For_Embedded_Development) and [piclist](http://www.piclist.com/tecHREF/microchip/languages.htm)
+
+## Editors and IDE:
+
+* CodeBlocks Arduino IDE
+* Arduino
+* Pinguino
+* Piklab
+* Wiring [http://wiring.org.co/](http://wiring.org.co/)
+* Embitz
+* Code::Blocks
+* Eclipse CDT
+* Code Composer Essentials (CCEssentials) TI
+* ChipVault
+* Ardiuno debugger
+* MCU 8051 IDE
+
+burner, programmer, downloader, inhibitor...: avrdude avrgal pic32prog ardupic32 PonyProg prog84
+
+# other lists:
+
+* [opencircuitdesign](http://opencircuitdesign.com)
+* [vlsiacademy](http://www.vlsiacademy.org/open-source-cad-tools.html)
+* [opencircuits](http://www.opencircuits.com/Software_tool)
+* [semiwiki](https://www.semiwiki.com/forum/f119/eda-open-source-tools-wiki-314.html)
+* [semiwiki](https://www.semiwiki.com/forum/showwiki.php?title=Semi-Wiki:EDA-Open-Source-Tools-Wiki)
+* [fritzing](http://fritzing.org/about/comparison)
+* [wiki.archlinux](https://wiki.archlinux.org/index.php/List_of_applications/Science#Electronics) [wikipedia HDL simulators](https://en.m.wikipedia.org/wiki/List_of_HDL_simulators)
+* [wikipedia List free electronics circuit simulators](https://en.wikipedia.org/wiki/List_of_free_electronics_circuit_simulators)
+* [wikipedia Electronic circuit simulation](https://en.wikipedia.org/wiki/Electronic_circuit_simulation)
+* [m-thu](https://github.com/m-thu/sandbox/blob/master/URLs.md#eda)
+* [awesome-electronics](https://github.com/kitspace/awesome-electronics/blob/master/README.md)
+* [Awesome-Embedded](https://github.com/nhivp/Awesome-Embedded)
+* [awesome-iot-1](https://github.com/kuzzleio/awesome-iot-1)
+* [awesome-c](https://github.com/uhub/awesome-c)
+* [fedoraproject](https://fedoraproject.org/wiki/User:Jjmcd/Drafts/Packages/Embedded)
+* [gnupic](http://www.gnupic.dds.nl/index.html)
+* [webring](http://www.webring.org/l/rd?ring=picmicro;id=26;url=http%3A%2F%2Fpicemulator%2Ecom%2Flinks%2Ehtml)
+* [microchip](https://www.microchip.com/forums/m/tm.aspx?m=235424&p=1)
 
 
 
-other lists:
-http://opencircuitdesign.com
-http://www.vlsiacademy.org/open-source-cad-tools.html
-http://www.opencircuits.com/Software_tool
-https://www.semiwiki.com/forum/f119/eda-open-source-tools-wiki-314.html
-http://fritzing.org/about/comparison
-https://wiki.archlinux.org/index.php/List_of_applications/Science#Electronics
-https://en.m.wikipedia.org/wiki/List_of_HDL_simulators
-https://en.wikipedia.org/wiki/List_of_free_electronics_circuit_simulators
-https://en.wikipedia.org/wiki/Electronic_circuit_simulation
-https://github.com/m-thu/sandbox/blob/master/URLs.md#eda
-https://github.com/kitspace/awesome-electronics/blob/master/README.md
-https://github.com/nhivp/Awesome-Embedded
-https://github.com/kuzzleio/awesome-iot-1
-https://github.com/uhub/awesome-c
-
-
-
-RS-232
-line printer terminal, LPT
-JTAG port 
-parallel serial 
-Serial Wire Debug (SWD) 
-
+**P.S.** This as far as I could go. There are probably a lot of mistakes here. Please help me complete and improve this list.
 
 1. symbolic mathematical analysis alternatives to Mathematica, Maple and MATLAB symbolic toolbox (formerly MuPAD)
     1. Maxima Language using WxMaxima or Jupyter
