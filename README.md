@@ -1,4 +1,6 @@
 # awsomeEngSci
+[![Sponsor](https://img.shields.io/static/v1?label=Sponsor&message=%E2%9D%A4&logo=GitHub&color=%23fe8e86)](https://github.com/sponsors/Foadsf) [![GitHub stars](https://img.shields.io/github/stars/Foadsf/awsomeEngSci?style=social)](https://github.com/Foadsf/awsomeEngSci)
+
 Curated list of awsome Free and Open Source Software for engineering and science
 
 
