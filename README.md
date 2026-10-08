@@ -72,6 +72,9 @@ I have searched the internet and I have found some of the open source 3D and 2D 
 - [SchemeCad](http://www.omnigia.com/SchemeCad/)
 - [Curv](https://github.com/doug-moen/curv)
 
+**CAD data and examples:**
+- [CADProps STEP Models](https://github.com/cadprobs-a11y/cadprops-step-models) — Open CAD sample collection with STEP, STL and IGES files, previews, inspection guides and per-model license notes. This is a data/examples resource rather than a CAD application.
+
 **Mesh:**
 - [Gmsh ](http://gmsh.info/) .geo  ([pygmsh](https://github.com/nschloe/pygmsh) python wrapper)
 - [NetGen ](https://ngsolve.org/) .in2d
